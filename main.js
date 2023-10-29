@@ -128,14 +128,14 @@ window.onresize = checkWindowSize;
       source_link: 'https://github.com/leloufadel/bookstore',
     },
     {
-      name: 'Walkers Hikers',
-      description: 'A buddy.io connection site for hikers with the love of nature. This is how to keep walking when you cannot keep walking',
+      name: 'Money Tracker',
+      description: ' a mobile web application where you can manage your Money-tracker: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.',
       image: 'images/project_fourth.png',
-      class: 'Demo',
-      type: 'In-house',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      live_link: '',
-      source_link: '',
+      class: 'Remote',
+      type: 'Solo',
+      technologies: ['HTML', 'CSS', 'Ruby on Rails'],
+      live_link: 'https://moneytracker-yyep.onrender.com/',
+      source_link: 'https://github.com/leloufadel/Money-tracker-App',
     },
   ];
   const projectContainer = document.getElementById('works');
