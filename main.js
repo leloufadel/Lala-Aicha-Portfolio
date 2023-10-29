@@ -130,7 +130,7 @@ window.onresize = checkWindowSize;
     {
       name: 'Money Tracker',
       description: ' A mobile web application where you can manage your Money-tracker: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.',
-      image: 'Money-tracker-capt.PNG',
+      image: 'images/Money-tracker-capt.png',
       class: 'Remote',
       type: 'Solo',
       technologies: ['HTML', 'CSS', 'Ruby on Rails'],
