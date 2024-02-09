@@ -97,6 +97,18 @@ window.onresize = checkWindowSize;
 // Popup Window
 (function createProjects() {
   const projectDetails = [
+
+    {
+      name: 'Page-to-Page',
+      description: 'Page to Page Library is a web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users. This app was built using our accumulated Front-end and Back-end skills. With technologies such as JavaScript, Ruby along with their frameworks and PostgreSQL for database management.'
+      ,
+      image: 'images/Pagetopage-pdf.png',
+      class: 'Remote',
+      type: 'Collaborative',
+      technologies: ['Rails', 'React', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
+      live_link: 'https://page-to-page.onrender.com/',
+      source_link: 'https://github.com/leloufadel/Page-To-page-Library-Backend',
+    },
     {
       name: 'MovieShow',
       description: 'MovieSHOW is a Single-page Web Application built with JavaScript ES6. It uses the free TVMAZE-API to showcase information about movies and Television shows.',
@@ -107,16 +119,16 @@ window.onresize = checkWindowSize;
       live_link: 'https://majdalkilany.github.io/JavaScript-capstone-project/dist/',
       source_link: 'https://github.com/majdalkilany/JavaScript-capstone-project',
     },
-    {
-      name: 'Leaderboard',
-      description: 'This project consumes the Leaderboard API Service using JavaScript Async and Await to display scores submitted by different players',
-      image: 'images/leaderboard.png',
-      class: 'Personal',
-      type: 'In-house',
-      technologies: ['HyperText-ML', 'JavaScript', 'CSS'],
-      live_link: '',
-      source_link: '',
-    },
+    // {
+    //   name: 'Leaderboard',
+    //   description: 'This project consumes the Leaderboard API Service using JavaScript Async and Await to display scores submitted by different players',
+    //   image: 'images/leaderboard.png',
+    //   class: 'Personal',
+    //   type: 'In-house',
+    //   technologies: ['HyperText-ML', 'JavaScript', 'CSS'],
+    //   live_link: '',
+    //   source_link: '',
+    // },
     {
       name: 'bookstore',
       description: 'Bookstore" is a React and Redux-based web app with API integration. It offers a seamless browsing and purchasing experience for books online. With CSS and Bootstrap, it ensures visually appealing designs. Check out the GitHub repo for code exploration and contributions.',
@@ -129,11 +141,11 @@ window.onresize = checkWindowSize;
     },
     {
       name: 'Money Tracker',
-      description: ' A mobile web application where you can manage your Money: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.',
-      image: 'images/Money-tracker-capt.PNG',
+      description: 'A mobile web app designed for budget management, enabling you to oversee your expenses by providing a categorized list of transactions. This way, you can easily track your spending and understand where your money has been allocated.',
+      image: 'images/mon-track.png',
       class: 'Remote',
       type: 'Solo',
-      technologies: ['HTML', 'CSS', 'Ruby on Rails'],
+      technologies: ['Ruby on rails', 'PostgreSQL', 'CSS'],
       live_link: 'https://moneytracker-yyep.onrender.com/',
       source_link: 'https://github.com/leloufadel/Money-tracker-App',
     },
@@ -162,7 +174,7 @@ window.onresize = checkWindowSize;
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
                 </svg>
-                &copy;2023
+                &copy;2024
               </span>
             </li>
           </ul>
@@ -195,7 +207,7 @@ window.onresize = checkWindowSize;
                   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
                   </svg>
-                  &copy;2023
+                  &copy;2024
                 </span>
               </li>
             </ul>
