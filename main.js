@@ -119,7 +119,7 @@ window.onresize = checkWindowSize;
       live_link: 'https://majdalkilany.github.io/JavaScript-capstone-project/dist/',
       source_link: 'https://github.com/majdalkilany/JavaScript-capstone-project',
     },
-    {
+    // {
     //   name: 'Leaderboard',
     //   description: 'This project consumes the Leaderboard API Service using JavaScript Async and Await to display scores submitted by different players',
     //   image: 'images/leaderboard.png',
@@ -142,7 +142,7 @@ window.onresize = checkWindowSize;
     {
       name: 'Money Tracker',
       description: 'A mobile web app designed for budget management, enabling you to oversee your expenses by providing a categorized list of transactions. This way, you can easily track your spending and understand where your money has been allocated.',
-      image: 'images/project_fourth.png',
+      image: 'images/mon-track.png',
       class: 'Remote',
       type: 'Solo',
       technologies: ['Ruby on rails', 'PostgreSQL', 'CSS'],
@@ -174,7 +174,7 @@ window.onresize = checkWindowSize;
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
                 </svg>
-                &copy;2023
+                &copy;2024
               </span>
             </li>
           </ul>
@@ -207,7 +207,7 @@ window.onresize = checkWindowSize;
                   <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
                   </svg>
-                  &copy;2023
+                  &copy;2024
                 </span>
               </li>
             </ul>
