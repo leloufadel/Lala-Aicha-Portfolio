@@ -102,7 +102,7 @@ window.onresize = checkWindowSize;
       name: 'Page-to-Page',
       description: 'Page to Page Library is a web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users. This app was built using our accumulated Front-end and Back-end skills. With technologies such as JavaScript, Ruby along with their frameworks and PostgreSQL for database management.'
       ,
-      image: 'images/Page-to-Page.png',
+      image: 'images/Pagetopage-pdf.png',
       class: 'Remote',
       type: 'Collaborative',
       technologies: ['Rails', 'React', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
