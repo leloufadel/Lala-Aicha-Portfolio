@@ -107,7 +107,7 @@ window.onresize = checkWindowSize;
       type: 'Collaborative',
       technologies: ['Rails', 'React', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
       live_link: 'https://page-to-page.onrender.com/',
-      source_link: 'https://github.com/majdalkilany/JavaScript-capstone-project',
+      source_link: 'https://github.com/leloufadel/Page-To-page-Library-Backend',
     },
     {
       name: 'MovieShow',
