@@ -100,9 +100,9 @@ window.onresize = checkWindowSize;
 
     {
       name: 'Page-to-Page',
-      description: 'Page to Page Library is a web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users. This app was built using our accumulated Front-end and Back-end skills. With technologies such as JavaScript, Ruby along with their frameworks and PostgreSQL for database management.'
+      description: 'Page to Page Library is a Full Stuck web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users.'
       ,
-      image: 'images/Pagetopage-pdf.png',
+      image: 'images/responsive-pageto.png',
       class: 'Remote',
       type: 'Collaborative',
       technologies: ['Rails', 'React', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
@@ -142,7 +142,7 @@ window.onresize = checkWindowSize;
     {
       name: 'Money Tracker',
       description: 'A mobile web app designed for budget management, enabling you to oversee your expenses by providing a categorized list of transactions. This way, you can easily track your spending and understand where your money has been allocated.',
-      image: 'images/mon-track.png',
+      image: 'images/Money-tracker-capt.png',
       class: 'Remote',
       type: 'Solo',
       technologies: ['Ruby on rails', 'PostgreSQL', 'CSS'],
