@@ -118,6 +118,8 @@ header .navbar ul li.active a {
   font-size: 20px;
 }
 
+
+
 @media (min-width: 375px) {
   main {
     display: flex;
@@ -638,7 +640,10 @@ header .navbar ul li.active a {
     font-size: 32px;
     text-align: center;
   }
-
+.p-work{
+margin-left: 20px;
+border: 1px  solid #1c1a19;
+}
   .attach-icon {
     display: flex;
     align-items: center;
@@ -1035,8 +1040,8 @@ header .navbar ul li.active a {
     flex-direction: row;
     justify-content: right;
     align-items: flex-start;
-    
   }
+
 
   .attach-icon img {
     float: left;
@@ -1046,7 +1051,7 @@ header .navbar ul li.active a {
   }
 
   .works-centered .main-works img {
-    width: 648px;
+    width: 448px;
     height: 348px;
     margin: auto;
   }

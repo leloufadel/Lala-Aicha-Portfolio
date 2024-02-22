@@ -117,7 +117,7 @@ const addCardsToUI = () => {
         <p>${sliceText(data[0].description)}...</p>
       </div>
     </div>
-<div class="main-works">
+<div class="main-works ">
       <ul class="project-list">
         <li><a class="start-list" href="#">${data[0].languages[0]}</a></li>
         <li><a class="second-list" href="#">${data[0].languages[1]}</a></li>
