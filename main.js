@@ -1,249 +1,197 @@
-const links = document.getElementsByClassName('link');
-const mobileMenu = document.getElementById('mobile-menu');
-const menuBg = document.getElementById('portfolio1');
-const { body } = document;
-const logo = document.getElementsByClassName('logo');
-const emailField = document.getElementById('email');
-const errorMsg = document.getElementById('error');
-const form = document.getElementById('form');
-const openBtn = document.getElementById('openBtn');
-const header = document.getElementsByTagName('header')[0];
+// JS for Hamburger Menu
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-form.addEventListener('submit', (event) => {
-  const emailValue = emailField.value;
-
-  if (emailValue === emailValue.toLowerCase()) {
-    errorMsg.style.display = 'none';
-  } else {
-    event.preventDefault();
-    errorMsg.style.display = 'block';
-  }
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
 });
 
-// local storage
-const mail = document.getElementById('mail');
-const username = document.getElementById('username');
-const message = document.getElementById('message');
+document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+}));
 
-const contactData = {
-  mail: '',
-  message: '',
-  username: '',
+// JS for Form Validation
+const fname = document.getElementById('fullname');
+const email = document.getElementById('email-address');
+const message = document.getElementById('write-message');
+const form = document.getElementById('contact');
+const errorElement = document.getElementById('small');
+
+form.addEventListener('submit', (e) => {
+  if (fname.value === '' || fname.value == null) {
+    e.preventDefault();
+    errorElement.innerText = 'Please enter your name';
+  } else if (email.value === '' || email.value == null) {
+    e.preventDefault();
+    errorElement.innerText = 'Please enter email';
+  } else if (email.value === email.value.toUpperCase()) {
+    e.preventDefault();
+    errorElement.innerText = 'Please use Lowercase';
+  } else if (/[A-Z]/.test(email.value)) {
+    e.preventDefault();
+    email.style.color = 'blue';
+    errorElement.innerText = 'Please use Lowercase';
+  } else {
+    email.style.color = 'grey';
+    errorElement.innerText = '';
+  }
+
+  // JS for preserve data in the browsererve Data
+  const userInput = {
+    storeName: fname.value,
+    storeEmail: email.value,
+    storeMessage: message.value,
+  };
+  localStorage.setItem('userInput', JSON.stringify(userInput));
+});
+
+const data = [
+
+  {
+    id: 0,
+    title: 'Page-to-Page',
+    description: 'Page to Page Library is a Full Stuck web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users.',
+    featuredImage: 'images/responsive-pageto.png',
+    class: 'Remote',
+    type: 'Collaborative',
+    languages: ['Rails', 'React', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
+    liveLink: 'https://page-to-page.onrender.com/',
+    sourceLink: 'https://github.com/leloufadel/Page-To-page-Library-Backend',
+  },
+  {
+    id: 1,
+    title: 'MovieShow',
+    description: 'MovieSHOW is a Single-page Web Application built with JavaScript ES6. It uses the free TVMAZE-API to showcase information about movies and Television shows.',
+    featuredImage: 'images/IMoviesShowcase.png',
+    class: 'Remote',
+    type: 'Collaborative',
+    languages: ['ES6', 'Webpack', 'HyperText-ML'],
+    live_link: 'https://majdalkilany.github.io/JavaScript-capstone-project/dist/',
+    sourceLink: 'https://github.com/majdalkilany/JavaScript-capstone-project',
+  },
+  {
+    id: 2,
+    title: 'bookstore',
+    description: 'Bookstore" is a React and Redux-based web app with API integration. It offers a seamless browsing and purchasing experience for books online. With CSS and Bootstrap, it ensures visually appealing designs. Check out the GitHub repo for code exploration and contributions.',
+    featuredImages: 'Images/project_third.png',
+    class: 'Remote',
+    type: 'Solo',
+    languages: ['HTML', 'CSS', 'React', 'Redux'],
+    live_link: 'https://bookstore-pjl7.onrender.com/',
+    sourceLink: 'https://github.com/leloufadel/bookstore',
+  },
+  {
+    id: 3,
+    title: 'Money Tracker',
+    description: 'A mobile web app designed for budget management, enabling you to oversee your expenses by providing a categorized list of transactions. This way, you can easily track your spending and understand where your money has been allocated.',
+    featuredImage: 'images/Money-tracker-capt.png',
+    class: 'Remote',
+    type: 'Solo',
+    languages: ['Ruby on rails', 'PostgreSQL', 'CSS'],
+    live_link: 'https://moneytracker-yyep.onrender.com/',
+    sourceLink: 'https://github.com/leloufadel/Money-tracker-App',
+  },
+];
+
+const sliceText = (text) => {
+  const maxLength = 200;
+  if (text.length < maxLength) {
+    return text;
+  }
+  return text.slice(0, text.length - maxLength);
 };
 
-if (localStorage.getItem('contactData') !== null) {
-  const data = JSON.parse(localStorage.getItem('contactData'));
-  mail.value = data.mail;
-  username.value = data.username;
-  message.value = data.message;
-}
+const cards = document.querySelector('.extra');
+const modalWarpper = document.querySelector('#modal-wrapper');
 
-mail.addEventListener('change', (e) => {
-  contactData.mail = e.target.value;
-  contactData.username = username.value;
-  contactData.message = message.value;
-  localStorage.setItem('contactData', JSON.stringify(contactData));
-});
+const addCardsToUI = () => {
+  const extraContainer = document.querySelector('.extra');
 
-username.addEventListener('change', (e) => {
-  contactData.mail = mail.value;
-  contactData.username = e.target.value;
-  contactData.message = message.value;
-  localStorage.setItem('contactData', JSON.stringify(contactData));
-});
-
-message.addEventListener('change', (e) => {
-  contactData.mail = mail.value;
-  contactData.username = username.value;
-  contactData.message = e.target.value;
-  localStorage.setItem('contactData', JSON.stringify(contactData));
-});
-
-function openMobileMenu() {
-  mobileMenu.style.display = 'flex';
-  body.classList.add('menu-open');
-  menuBg.style.filter = 'blur(8px)';
-  logo[0].style.visibility = 'hidden';
-  openBtn.style.visibility = 'hidden';
-  body.style.overflow = 'hidden';
-}
-
-openBtn.addEventListener('click', openMobileMenu);
-
-function closeMobileMenu() {
-  mobileMenu.style.display = 'none';
-  menuBg.style.filter = '';
-  logo[0].style.visibility = 'visible';
-  body.classList.remove('menu-open');
-  openBtn.style.visibility = 'visible';
-  body.style.overflow = 'scroll';
-}
-
-Array.from(links).forEach((element) => {
-  element.addEventListener('click', closeMobileMenu);
-  body.classList.remove('menu-open');
-});
-
-function checkWindowSize() {
-  if (window.innerWidth > 768) {
-    mobileMenu.style.display = 'none';
-    body.classList.remove('menu-open');
-    menuBg.style.filter = '';
-    logo[0].style.filter = '';
-  }
-}
-
-window.onresize = checkWindowSize;
-// Popup Window
-(function createProjects() {
-  const projectDetails = [
-
-    {
-      name: 'Page-to-Page',
-      description: 'Page to Page Library is a Full Stuck web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users.'
-      ,
-      image: 'images/responsive-pageto.png',
-      class: 'Remote',
-      type: 'Collaborative',
-      technologies: ['Rails', 'React', 'PostgreSQL', 'JavaScript', 'HTML', 'CSS'],
-      live_link: 'https://page-to-page.onrender.com/',
-      source_link: 'https://github.com/leloufadel/Page-To-page-Library-Backend',
-    },
-    {
-      name: 'MovieShow',
-      description: 'MovieSHOW is a Single-page Web Application built with JavaScript ES6. It uses the free TVMAZE-API to showcase information about movies and Television shows.',
-      image: 'images/IMoviesShowcase.png',
-      class: 'Remote',
-      type: 'Collaborative',
-      technologies: ['ES6', 'Webpack', 'HyperText-ML'],
-      live_link: 'https://majdalkilany.github.io/JavaScript-capstone-project/dist/',
-      source_link: 'https://github.com/majdalkilany/JavaScript-capstone-project',
-    },
-    // {
-    //   name: 'Leaderboard',
-    //   description: 'This project consumes the Leaderboard API Service using JavaScript Async and Await to display scores submitted by different players',
-    //   image: 'images/leaderboard.png',
-    //   class: 'Personal',
-    //   type: 'In-house',
-    //   technologies: ['HyperText-ML', 'JavaScript', 'CSS'],
-    //   live_link: '',
-    //   source_link: '',
-    // },
-    {
-      name: 'bookstore',
-      description: 'Bookstore" is a React and Redux-based web app with API integration. It offers a seamless browsing and purchasing experience for books online. With CSS and Bootstrap, it ensures visually appealing designs. Check out the GitHub repo for code exploration and contributions.',
-      image: 'images/project_third.png',
-      class: 'Remote',
-      type: 'Solo',
-      technologies: ['HTML', 'CSS', 'React','Redux'],
-      live_link: 'https://bookstore-pjl7.onrender.com/',
-      source_link: 'https://github.com/leloufadel/bookstore',
-    },
-    {
-      name: 'Money Tracker',
-      description: 'A mobile web app designed for budget management, enabling you to oversee your expenses by providing a categorized list of transactions. This way, you can easily track your spending and understand where your money has been allocated.',
-      image: 'images/Money-tracker-capt.png',
-      class: 'Remote',
-      type: 'Solo',
-      technologies: ['Ruby on rails', 'PostgreSQL', 'CSS'],
-      live_link: 'https://moneytracker-yyep.onrender.com/',
-      source_link: 'https://github.com/leloufadel/Money-tracker-App',
-    },
-  ];
-  const projectContainer = document.getElementById('works');
-  projectDetails.forEach((project, index) => {
-    const articleTemplate = `<div class="card-wrapper">
-     <article class="card">
-        <div class="img-div">
-        <img src="${project.image}" alt="project1" class="card-project">
-        </div>
-        <div>
-          <h2>${project.name}</h2>
-          <ul class="card-list">
-            <li class="no-bullet">${project.class}</li>
-            <li class="project-tag">
-              <span>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                </svg>
-                ${project.type}
-              </span>
-            </li>
-            <li class="project-tag">
-              <span>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                </svg>
-                &copy;2024
-              </span>
-            </li>
-          </ul>
-          <p>${project.description}</p>
-          <ul class="tech-stack">
-            <li>${project.technologies[0]}</li>
-            <li>${project.technologies[1]}</li>
-            <li>${project.technologies[2]}</li>
-          </ul>
-          <button class="btn" type="button">See Project</button>
-        </div>
-        <div class="modal-cover" id="modal-cover${index}">
-          <div class="modal" id="modal${index}">
-            <div class="modal-head-container">
-              <h2 id="mdlhead-${index}">${project.name}</h2>
-              <span class="modal-close">&times;</span>
-            </div>
-            <ul class='modal-ul'>
-              <li class="no-bullet">${project.class}</li>
-              <li class="project-tag">
-                <span>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                  </svg>
-                  ${project.type}
-                </span>
-              </li>
-              <li class="project-tag">
-                <span>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                  </svg>
-                  &copy;2024
-                </span>
-              </li>
-            </ul>
-            <img src="${project.image}" alt="project1" class="modal-img" id="mdl-${index}">
-            <div class="modal-footer">
-              <p class="desc" id="mdldesc-${index}">${project.description}</p>
-              <div class="details">
-                <ul class="tech-stack" id="mdltecstk-${index}">
-                  <li>${project.technologies[0]}</li>
-                  <li>${project.technologies[1]}</li>
-                  <li>${project.technologies[2]}</li>
-                </ul>
-                <div class="view-btn-container">
-                  <button class="mdbtn" type="button" id="mdlbtn${index}"> <a href="${project.live_link}"> Live <i class="bx bx-right-top-arrow-circle"></i></a></button> 
-                  <button class="mdbtn" type="button" id="mdlbtn-${index}"> <a href="${project.source_link}">Source <i class="bx bxl-github"></i></a> </button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </article>
+  const fullWidthCardDisplay = `<article class="works-centered container">
+    <div class="main-works">
+      <img src='${data[0].featuredImage}' alt="My Recent Works">
+      <div class="main-works-1">
+        <h2 class="multi-stories">${data[0].title}</h2>
+        <p>${sliceText(data[0].description)}...</p>
       </div>
-    `;
-    projectContainer.innerHTML += articleTemplate;
+    </div>
+<div class="main-works ">
+      <ul class="project-list">
+        <li><a class="start-list" href="#">${data[0].languages[0]}</a></li>
+        <li><a class="second-list" href="#">${data[0].languages[1]}</a></li>
+        <li><a class="third-list" href="#">${data[0].languages[2]}</a></li>
+        <li><button class="see-btn fourth-list see-proj-1 load-modal" data-id="0" id="see-project-1">See Project</button></li>
+      </ul>
+    </div>
+  </article>`;
+
+  extraContainer.innerHTML = `
+<div class="works-centered">${fullWidthCardDisplay}</div>
+<div class="print-container container">
+${data.map((item) => (`<article style=" background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .9)), url('${item.featuredImage}') center/cover no-repeat;" class="card">
+<div class="card-details">
+  <h4 class="card-title">${item.title}</h4>
+  <p class="card-description">${sliceText(item.description)}...</p>
+<div class="card-tags">
+    <span>${item.languages[0]}</span>
+    <span>${item.languages[1]}</span>
+    <span>${item.languages[2]}</span>
+  </div>
+</div>
+<button class="card-btn see-btn" data-id="${item.id}">See Project</button>
+</article>`)).join(' ')}
+</div>`;
+};
+
+document.addEventListener('DOMContentLoaded', addCardsToUI);
+
+const addToModal = (dataId) => {
+  const selectedData = data.filter((x) => x.id === +dataId);
+
+  const modalTemplate = `<div id="modal-box">
+  <div id="modal-header">
+      <h2>${selectedData[0].title}</h2>
+      <button data-action="close" class="close-modal" id="close-modal">&times;</button>
+    </div>
+    <ul class="popup-lang">
+      <li><a href="#">${selectedData[0].languages[0]}</a></li>
+      <li><a href="#">${selectedData[0].languages[1]}</a></li>
+      <li><a href="#">${selectedData[0].languages[2]}</a></li>
+    </ul>
+  <div class="popup-details">
+      <img class="feature-image" src='${selectedData[0].featuredImage}' alt="Feature Portfolio Image">
+      <div class="side-info">
+        <p>${selectedData[0].description}</p>
+        <div class="out-links">
+          <a class="see-live" href=${selectedData[0].liveLink} target="_blank">See Live<img src="./logos/See-live.png" alt="live icon"></a>
+          <a class="see-source" href=${selectedData[0].sourceLink} target="_blank">See Source<img src="./logos/See-source.png" alt="source icon"></a>
+        </div>
+        </div>
+      </div>
+      </div>`;
+
+  modalWarpper.innerHTML = modalTemplate;
+};
+
+const removeModal = () => {
+  const parent = modalWarpper.parentElement.firstElementChild.nextElementSibling.nextElementSibling;
+  const closeButton = parent.firstElementChild.firstElementChild.lastElementChild;
+  closeButton.addEventListener('click', () => {
+    modalWarpper.classList.remove('active');
   });
-  projectContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('btn')) {
-      const modalCover = event.target.parentNode.nextElementSibling;
-      document.body.style.overflow = 'hidden';
-      modalCover.style.display = 'flex';
-      header.style.display = 'none';
-    }
-    if (event.target.classList.contains('modal-close')) {
-      const modalCover = event.target.closest('.modal-cover');
-      modalCover.style.display = 'none';
-      document.body.style.overflow = 'scroll';
-      header.style.display = 'block';
-    }
-  });
-}());
+};
+
+const showModal = () => {
+  modalWarpper.classList.add('active');
+  removeModal();
+};
+
+cards.addEventListener('click', (e) => {
+  if (e.target.classList.contains('see-btn')) {
+    const dataId = e.target.dataset.id;
+    addToModal(dataId);
+    showModal();
+  }
+});
