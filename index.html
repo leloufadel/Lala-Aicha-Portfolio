@@ -50,50 +50,87 @@
             <li><a href="https://medium.com/@leloufadel" target="_blank"><img src="./logos/Vector-M.png" alt="Medium logo"></a></li>
           </ul>
         </article>
-           <div class="langs">
-                        <div id="container">
-                            <div class="row">
-                                <img src="./images/angular.png">
-                                <img src="./images/css-logo.png">
-                                <img src="./images/django.png">
-                                <img src="./images/rails.png">
-                            </div>
-                            <div class="row">
-                                <img src="./images/html-logo.png">
-                                <img src="./images/Jest.png">
-                                <img src="./images/python.png">
-                                <img src="./images/ruby.png">
-                            </div>
-                            <div class="row">
-                                <img src="./images/webpack.png">
-                                <img src="./images/react7473.logowik.com.webp">
-                                <img src="./images/js-logo.png">
-                                <img src="./images/mySql.png">
-                            </div>
-                        </div>
-            </article>
-        </section>
-        <div class="sep" id="contact-"> </div>
-        <section class="contact" id="contact">
-            <h2>Contact</h2>
-            <article>
-                <p>If you have an application you are interested in developing,
-                     a feature that you need built or a project that needs coding. 
-                    I’d love to help with it!</p>
-                    <form action="https://formspree.io/f/xqkonprl" method="post" id="form">
-                        <input name="name" id="username" required maxlength="30" type="text" placeholder="Your name">
-                        <input  required type="email" id="mail" placeholder="your-email@domain.com">
-                        <span class="error-message" id="error">Please make sure your email address is in lower case</span>
-                        <textarea name="Message" required maxlength="500" id="message" placeholder="Write your message here"></textarea>
-                              <div class="btn-container">
-                            <button class="contact-btn" type="submit">Send Message</button>
-                        </div>
-                    </form>
-                    <div class="line">
+          
+        <div class="top-works">
+            <h2>My Recent Works</h2><hr>
+          </div>
+           <!-- Cards HTML start from here -->
+          <section class="extra portfolio" id="portfolio"></section>
+  
+          </section>
+            <article class="about-me about" id="about">
+              <section class="background-holder">
+                <h2>About me</h2>
+                <p>
+                  Hello! I'm a Full-stack web developer with experience in HTML5, CSS3, JavaScript,
+                  React, Redux, Ruby, Ruby on Rails, PostgreSQL. Contributing to open-source projects,
+                  one commit at a time. I can help you build a product, feature or 
+                  website. Look through some of my work and experience! If you like what you 
+                  see and have a project you need coded, don't hesitate to contact me.
+                </p>
+                <button><a href="#" target="_blank">Get my resume</a></button>
+              </section>
+  
+              <section class="lists">
+                <hr>
+              <div class="flex-master">
+                <div class="flex-container">
+                  <section class="attach-icon">
+                    <img src="./Images/Rectangle 55.png" alt="">
+                    <h3>Language</h3>
+                  </section>
+  
+                  <ul>
+                    <li><a href="https://www.javascript.com/" target="_blank">JavaScript</a></li>
+                    <li><a href="https://www.ruby-lang.org/en/" target="_blank">Ruby</a></li>
+                    <li><a href="https://html5.org/" target="_blank">HTML</a></li>
+                    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank">CSS</a></li>
+                  </ul>
                 </div>
+  
+                <div class="flex-container">
+                  <section class="attach-icon">
+                    <img src="./Images/Square.png" alt="">
+                    <h3>Frameworks</h3>
+                  </section>
+  
+                  <ul>
+                    <li><a href="https://legacy.reactjs.org/" target="_blank">React.js</a></li>
+                    <li><a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a></li>
+                    <li><a href="https://rspec.info/" target="_blank">RSpec</a></li>
+                    <li><a href="https://capybarafacts.com/" target="_blank">CapyBara</a></li>
+                  </ul>
+                </div>
+  
+                <div class="flex-container">
+                  <section class="attach-icon">
+                  <img src="./Images/Circle.png" alt="">
+                  <h3>Skills</h3>
+                  </section>
+  
+                  <ul>
+                    <li><a href="#">Database Management</a></li>
+                    <li><a href="#">Version Control</a></li>
+                    <li><a href="#">CLI</a></li>
+                    <li><a href="#">API Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                  </ul>
+                </div>
+              </div>
+              </section>
             </article>
-        </section>
-    </main>
-    <script src="main.js"></script>
-</body>
-</html>
+  
+          </section>
+  
+         
+            <hr class="end-page">
+  
+         
+        </main>
+  
+        <!-------MODAL POPUP WINDOW--------------->
+        <div id="modal-wrapper"></div>
+        <script src="./app.js"></script>
+      </body>
+  </html>
+  
