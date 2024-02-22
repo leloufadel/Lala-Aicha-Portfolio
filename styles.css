@@ -200,6 +200,9 @@ nav ul li {
 #about {
   border-top-left-radius: 60px;
 }
+.navbar {
+  height: 100px !important;
+}
 
 .toolbar-container {
   display: flex;
@@ -208,20 +211,30 @@ nav ul li {
   margin: auto;
   margin-left: 0;
   margin-right: -100px;
-  width: 90%;
+  /* width: 90%; */
+  width: 100%;
   align-items: stretch;
   align-content: baseline;
+  height: 100px;
 }
+
+
 
 nav div {
   display: none;
 }
 
 .toolbar-container svg {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-right: 0;
 }
-
+.toolbar-container img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
 #nav-list {
   display: flex;
   justify-content: space-between;
