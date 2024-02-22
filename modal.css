@@ -23,7 +23,6 @@
   z-index: 2;
 }
 
-
 @media (min-width: 375px) {
   #modal-box {
     background-color: rgb(255, 255, 255);

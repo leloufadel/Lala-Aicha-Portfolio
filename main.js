@@ -13,16 +13,16 @@ document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click'
 }));
 
 // JS for Form Validation
-const ftitle = document.getElementById('fulltitle');
+const fname = document.getElementById('fullname');
 const email = document.getElementById('email-address');
 const message = document.getElementById('write-message');
 const form = document.getElementById('contact');
 const errorElement = document.getElementById('small');
 
 form.addEventListener('submit', (e) => {
-  if (title.value === '' || title.value == null) {
+  if (fname.value === '' || fname.value == null) {
     e.preventDefault();
-    errorElement.innerText = 'Please enter your title';
+    errorElement.innerText = 'Please enter your name';
   } else if (email.value === '' || email.value == null) {
     e.preventDefault();
     errorElement.innerText = 'Please enter email';
@@ -40,7 +40,7 @@ form.addEventListener('submit', (e) => {
 
   // JS for preserve data in the browsererve Data
   const userInput = {
-    storetitle: ftitle.value,
+    storeName: fname.value,
     storeEmail: email.value,
     storeMessage: message.value,
   };
@@ -48,7 +48,7 @@ form.addEventListener('submit', (e) => {
 });
 
 const data = [
-  
+
   {
     id: 0,
     title: 'Page-to-Page',
@@ -101,7 +101,7 @@ const sliceText = (text) => {
     return text;
   }
   return text.slice(0, text.length - maxLength);
-}
+};
 
 const cards = document.querySelector('.extra');
 const modalWarpper = document.querySelector('#modal-wrapper');
@@ -143,7 +143,7 @@ ${data.map((item) => (`<article style=" background: linear-gradient(to bottom, t
 <button class="card-btn see-btn" data-id="${item.id}">See Project</button>
 </article>`)).join(' ')}
 </div>`;
-}
+};
 
 document.addEventListener('DOMContentLoaded', addCardsToUI);
 
@@ -173,7 +173,7 @@ const addToModal = (dataId) => {
       </div>`;
 
   modalWarpper.innerHTML = modalTemplate;
-}
+};
 
 const removeModal = () => {
   const parent = modalWarpper.parentElement.firstElementChild.nextElementSibling.nextElementSibling;
@@ -181,12 +181,12 @@ const removeModal = () => {
   closeButton.addEventListener('click', () => {
     modalWarpper.classList.remove('active');
   });
-}
+};
 
 const showModal = () => {
   modalWarpper.classList.add('active');
   removeModal();
-}
+};
 
 cards.addEventListener('click', (e) => {
   if (e.target.classList.contains('see-btn')) {
