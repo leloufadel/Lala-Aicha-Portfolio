@@ -1,48 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Lala's Portfolio</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="toolbar-container" id="nav-list">
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Lala Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="./index.css">
+        <link rel="stylesheet" type="text/css" href="./modal.css">
+    </head>
 
-                <li class="logo">
-                    <!-- <a href="https://twitter.com/leloufadel" id="logo-new">Lala.<span>portfolio</span></a> -->
-                    <img src="./images/logo.png" class="nav-branding hider" alt="Logo">
+    <body>
+      <header>
+        <nav class="navbar">
+          <!-- <a href="#home" class="nav-branding hider">My Logo</a> -->
+          <img src="./images/logo.png" class="nav-branding hider" alt="logo">
 
-                </li>
-                <li class="logo">
-                    <svg id="openBtn" onclick="openMobileMenu()" width="30" height="20" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447715 2 0 1.55228 0 1ZM0 6C0 5.44772 0.447715 5 1 5L17 5C17.5523 5 18 5.44772 18 6C18 6.55229 17.5523 7 17 7L1 7C0.447715 7 0 6.55228 0 6ZM1 10C0.447715 10 0 10.4477 0 11C0 11.5523 0.447715 12 1 12H17C17.5523 12 18 11.5523 18 11C18 10.4477 17.5523 10 17 10H1Z" fill="#6070FF"/>
-                    </svg>    
-                </li>
-                <div>
-                <li class="nav-link"> <a href="#home">Home</a></li>
-                <li class="nav-link"> <a href="#works-">Portfolio</a></li>
-                <li class="nav-link"> <a href="#about-">About</a></li>
-                <li class="nav-link"> <a href="#contact-">Contact</a></li>
-                </div>
-                <div class="mobile-menu" id="mobile-menu">
-                    <span class="closeBtn" onclick="closeMobileMenu()">&times;</span>
-                    <li class="nav-link"> <a class="link" href="#portfolio1"
-                        onclick="closeMobileMenu()">Home</a></li>
-                    <li class="nav-link"> <a class="link" href="#works"
-                         onclick="closeMobileMenu()">Portfolio</a></li>
-                    <li class="nav-link"> <a class="link" href="#about" 
-                        onclick="closeMobileMenu()">About</a></li>
-                    <li class="nav-link"> <a class="link" href="#contact" 
-                        onclick="closeMobileMenu()">Contact</a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
+          <ul class="nav-menu">
+            <li class="nav-item portfolio"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li class="nav-item about"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item contact"><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="nav-item contact-me"><a href="#contact" class="nav-link"><img src="./logos/desktop-contact-icon.png" alt="Contact Menu icon"></a></li>
+          </ul>
 
     <main>
         <div id="home"></div>
