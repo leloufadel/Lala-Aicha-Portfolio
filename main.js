@@ -47,7 +47,6 @@ form.addEventListener('submit', (e) => {
   localStorage.setItem('userInput', JSON.stringify(userInput));
 });
 
-// Popup Form
 const data = [
   
   {
@@ -72,16 +71,6 @@ const data = [
     live_link: 'https://majdalkilany.github.io/JavaScript-capstone-project/dist/',
     sourceLink: 'https://github.com/majdalkilany/JavaScript-capstone-project',
   },
-  // {
-  //   title: 'Leaderboard',
-  //   description: 'This project consumes the Leaderboard API Service using JavaScript Async and Await to display scores submitted by different players',
-  //   image: 'images/leaderboard.png',
-  //   class: 'Personal',
-  //   type: 'In-house',
-  //   technologies: ['HyperText-ML', 'JavaScript', 'CSS'],
-  //   live_link: '',
-  //   source_link: '',
-  // },
   {
     id: 2,
     title: 'bookstore',
@@ -106,100 +95,103 @@ const data = [
   },
 ];
 
-  const projectContainer = document.getElementById('works');
-  projectDetails.forEach((project, index) => {
-    const articleTemplate = `<div class="card-wrapper">
-     <article class="card">
-        <div class="img-div">
-        <img src="${project.featuredImage}" alt="project1" class="card-project">
-        </div>
-        <div>
-          <h2>${project.title}</h2>
-          <ul class="card-list">
-            <li class="no-bullet">${project.class}</li>
-            <li class="project-tag">
-              <span>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                </svg>
-                ${project.type}
-              </span>
-            </li>
-            <li class="project-tag">
-              <span>
-                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                </svg>
-                &copy;2024
-              </span>
-            </li>
-          </ul>
-          <p>${project.description}</p>
-          <ul class="tech-stack">
-            <li>${project.technologies[0]}</li>
-            <li>${project.technologies[1]}</li>
-            <li>${project.technologies[2]}</li>
-          </ul>
-          <button class="btn" type="button">See Project</button>
-        </div>
-        <div class="modal-cover" id="modal-cover${index}">
-          <div class="modal" id="modal${index}">
-            <div class="modal-head-container">
-              <h2 id="mdlhead-${index}">${project.title}</h2>
-              <span class="modal-close">&times;</span>
-            </div>
-            <ul class='modal-ul'>
-              <li class="no-bullet">${project.class}</li>
-              <li class="project-tag">
-                <span>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                  </svg>
-                  ${project.type}
-                </span>
-              </li>
-              <li class="project-tag">
-                <span>
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="4" cy="4" r="4" fill="#C1C7D0"/>
-                  </svg>
-                  &copy;2024
-                </span>
-              </li>
-            </ul>
-            <img src="${project.image}" alt="project1" class="modal-img" id="mdl-${index}">
-            <div class="modal-footer">
-              <p class="desc" id="mdldesc-${index}">${project.description}</p>
-              <div class="details">
-                <ul class="tech-stack" id="mdltecstk-${index}">
-                  <li>${project.technologies[0]}</li>
-                  <li>${project.technologies[1]}</li>
-                  <li>${project.technologies[2]}</li>
-                </ul>
-                <div class="view-btn-container">
-                  <button class="mdbtn" type="button" id="mdlbtn${index}"> <a href="${project.live_link}"> Live <i class="bx bx-right-top-arrow-circle"></i></a></button> 
-                  <button class="mdbtn" type="button" id="mdlbtn-${index}"> <a href="${project.source_link}">Source <i class="bx bxl-github"></i></a> </button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </article>
+const sliceText = (text) => {
+  const maxLength = 200;
+  if (text.length < maxLength) {
+    return text;
+  }
+  return text.slice(0, text.length - maxLength);
+}
+
+const cards = document.querySelector('.extra');
+const modalWarpper = document.querySelector('#modal-wrapper');
+
+const addCardsToUI = () => {
+  const extraContainer = document.querySelector('.extra');
+
+  const fullWidthCardDisplay = `<article class="works-centered container">
+    <div class="main-works">
+      <img src='${data[0].featuredImage}' alt="My Recent Works">
+      <div class="main-works-1">
+        <h2 class="multi-stories">${data[0].title}</h2>
+        <p>${sliceText(data[0].description)}...</p>
       </div>
-    `;
-    projectContainer.innerHTML += articleTemplate;
+    </div>
+<div class="main-works">
+      <ul class="project-list">
+        <li><a class="start-list" href="#">${data[0].languages[0]}</a></li>
+        <li><a class="second-list" href="#">${data[0].languages[1]}</a></li>
+        <li><a class="third-list" href="#">${data[0].languages[2]}</a></li>
+        <li><button class="see-btn fourth-list see-proj-1 load-modal" data-id="0" id="see-project-1">See Project</button></li>
+      </ul>
+    </div>
+  </article>`;
+
+  extraContainer.innerHTML = `
+<div class="works-centered">${fullWidthCardDisplay}</div>
+<div class="print-container container">
+${data.map((item) => (`<article style=" background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .9)), url('${item.featuredImage}') center/cover no-repeat;" class="card">
+<div class="card-details">
+  <h4 class="card-title">${item.title}</h4>
+  <p class="card-description">${sliceText(item.description)}...</p>
+<div class="card-tags">
+    <span>${item.languages[0]}</span>
+    <span>${item.languages[1]}</span>
+    <span>${item.languages[2]}</span>
+  </div>
+</div>
+<button class="card-btn see-btn" data-id="${item.id}">See Project</button>
+</article>`)).join(' ')}
+</div>`;
+}
+
+document.addEventListener('DOMContentLoaded', addCardsToUI);
+
+const addToModal = (dataId) => {
+  const selectedData = data.filter((x) => x.id === +dataId);
+
+  const modalTemplate = `<div id="modal-box">
+  <div id="modal-header">
+      <h2>${selectedData[0].title}</h2>
+      <button data-action="close" class="close-modal" id="close-modal">&times;</button>
+    </div>
+    <ul class="popup-lang">
+      <li><a href="#">${selectedData[0].languages[0]}</a></li>
+      <li><a href="#">${selectedData[0].languages[1]}</a></li>
+      <li><a href="#">${selectedData[0].languages[2]}</a></li>
+    </ul>
+  <div class="popup-details">
+      <img class="feature-image" src='${selectedData[0].featuredImage}' alt="Feature Portfolio Image">
+      <div class="side-info">
+        <p>${selectedData[0].description}</p>
+        <div class="out-links">
+          <a class="see-live" href=${selectedData[0].liveLink} target="_blank">See Live<img src="./logos/See-live.png" alt="live icon"></a>
+          <a class="see-source" href=${selectedData[0].sourceLink} target="_blank">See Source<img src="./logos/See-source.png" alt="source icon"></a>
+        </div>
+        </div>
+      </div>
+      </div>`;
+
+  modalWarpper.innerHTML = modalTemplate;
+}
+
+const removeModal = () => {
+  const parent = modalWarpper.parentElement.firstElementChild.nextElementSibling.nextElementSibling;
+  const closeButton = parent.firstElementChild.firstElementChild.lastElementChild;
+  closeButton.addEventListener('click', () => {
+    modalWarpper.classList.remove('active');
   });
-  projectContainer.addEventListener('click', (event) => {
-    if (event.target.classList.contains('btn')) {
-      const modalCover = event.target.parentNode.nextElementSibling;
-      document.body.style.overflow = 'hidden';
-      modalCover.style.display = 'flex';
-      header.style.display = 'none';
-    }
-    if (event.target.classList.contains('modal-close')) {
-      const modalCover = event.target.closest('.modal-cover');
-      modalCover.style.display = 'none';
-      document.body.style.overflow = 'scroll';
-      header.style.display = 'block';
-    }
-  });
-}());
+}
+
+const showModal = () => {
+  modalWarpper.classList.add('active');
+  removeModal();
+}
+
+cards.addEventListener('click', (e) => {
+  if (e.target.classList.contains('see-btn')) {
+    const dataId = e.target.dataset.id;
+    addToModal(dataId);
+    showModal();
+  }
+});
