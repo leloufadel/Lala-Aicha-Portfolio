@@ -100,8 +100,7 @@ window.onresize = checkWindowSize;
 
     {
       name: 'Page-to-Page',
-      description: 'Page to Page Library is a Full Stuck web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users.'
-      ,
+      description: 'Page to Page Library is a Full Stuck web app that allows users to view and reserve books. Only admins can add and delete books and also give admin permissions to regular users.',
       image: 'images/responsive-pageto.png',
       class: 'Remote',
       type: 'Collaborative',
@@ -135,7 +134,7 @@ window.onresize = checkWindowSize;
       image: 'images/project_third.png',
       class: 'Remote',
       type: 'Solo',
-      technologies: ['HTML', 'CSS', 'React','Redux'],
+      technologies: ['HTML', 'CSS', 'React', 'Redux'],
       live_link: 'https://bookstore-pjl7.onrender.com/',
       source_link: 'https://github.com/leloufadel/bookstore',
     },

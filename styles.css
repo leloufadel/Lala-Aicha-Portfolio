@@ -16,6 +16,15 @@ body {
   height: 20px;
 }
 
+.nav-link,
+.nav-menu img {
+  transition: 0.7s ease;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
 .mobile-menu {
   position: absolute;
   width: 100%;
@@ -285,6 +294,7 @@ nav ul li {
 #about {
   border-top-left-radius: 60px;
 }
+
 .navbar {
   height: 100px !important;
 }
@@ -296,6 +306,7 @@ nav ul li {
   margin: auto;
   margin-left: 0;
   margin-right: -100px;
+
   /* width: 90%; */
   width: 100%;
   align-items: stretch;
@@ -304,12 +315,8 @@ nav ul li {
 }
 
 nav ul li:hover {
-  
   filter: opacity(0.5) drop-shadow(0 0 #0b60c0);
-
 }
-
-
 
 nav div {
   display: none;
@@ -319,6 +326,7 @@ nav div {
   font-size: 1rem;
   margin-right: 0;
 }
+
 .toolbar-container img {
   width: 3rem;
   height: 3rem;
@@ -326,6 +334,7 @@ nav div {
   margin-top: 0.5rem;
   cursor: pointer;
 }
+
 #nav-list {
   display: flex;
   justify-content: space-between;
