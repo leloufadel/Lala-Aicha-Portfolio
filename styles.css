@@ -25,6 +25,12 @@ body {
   display: none;
   cursor: pointer;
 }
+
+.nav-menu img:hover,
+.social img:hover,
+.hamburger:hover {
+  filter: opacity(0.5) drop-shadow(0 0 #ff6b00);
+}
 .mobile-menu {
   position: absolute;
   width: 100%;
