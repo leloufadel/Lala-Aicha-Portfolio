@@ -13,16 +13,16 @@ document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click'
 }));
 
 // JS for Form Validation
-const fname = document.getElementById('fullname');
+const ftitle = document.getElementById('fulltitle');
 const email = document.getElementById('email-address');
 const message = document.getElementById('write-message');
 const form = document.getElementById('contact');
 const errorElement = document.getElementById('small');
 
 form.addEventListener('submit', (e) => {
-  if (name.value === '' || name.value == null) {
+  if (title.value === '' || title.value == null) {
     e.preventDefault();
-    errorElement.innerText = 'Please enter your name';
+    errorElement.innerText = 'Please enter your title';
   } else if (email.value === '' || email.value == null) {
     e.preventDefault();
     errorElement.innerText = 'Please enter email';
@@ -40,7 +40,7 @@ form.addEventListener('submit', (e) => {
 
   // JS for preserve data in the browsererve Data
   const userInput = {
-    storeName: fname.value,
+    storetitle: ftitle.value,
     storeEmail: email.value,
     storeMessage: message.value,
   };
@@ -61,19 +61,60 @@ const data = [
     liveLink: 'https://page-to-page.onrender.com/',
     sourceLink: 'https://github.com/leloufadel/Page-To-page-Library-Backend',
   },
-]
-window.onresize = checkWindowSize;
-// Popup Window
+  {
+    id: 1,
+    title: 'MovieShow',
+    description: 'MovieSHOW is a Single-page Web Application built with JavaScript ES6. It uses the free TVMAZE-API to showcase information about movies and Television shows.',
+    featuredImage: 'images/IMoviesShowcase.png',
+    class: 'Remote',
+    type: 'Collaborative',
+    languages: ['ES6', 'Webpack', 'HyperText-ML'],
+    live_link: 'https://majdalkilany.github.io/JavaScript-capstone-project/dist/',
+    sourceLink: 'https://github.com/majdalkilany/JavaScript-capstone-project',
+  },
+  // {
+  //   title: 'Leaderboard',
+  //   description: 'This project consumes the Leaderboard API Service using JavaScript Async and Await to display scores submitted by different players',
+  //   image: 'images/leaderboard.png',
+  //   class: 'Personal',
+  //   type: 'In-house',
+  //   technologies: ['HyperText-ML', 'JavaScript', 'CSS'],
+  //   live_link: '',
+  //   source_link: '',
+  // },
+  {
+    id: 2,
+    title: 'bookstore',
+    description: 'Bookstore" is a React and Redux-based web app with API integration. It offers a seamless browsing and purchasing experience for books online. With CSS and Bootstrap, it ensures visually appealing designs. Check out the GitHub repo for code exploration and contributions.',
+    featuredImages: 'Images/project_third.png',
+    class: 'Remote',
+    type: 'Solo',
+    languages: ['HTML', 'CSS', 'React', 'Redux'],
+    live_link: 'https://bookstore-pjl7.onrender.com/',
+    sourceLink: 'https://github.com/leloufadel/bookstore',
+  },
+  {
+    id: 3,
+    title: 'Money Tracker',
+    description: 'A mobile web app designed for budget management, enabling you to oversee your expenses by providing a categorized list of transactions. This way, you can easily track your spending and understand where your money has been allocated.',
+    featuredImage: 'images/Money-tracker-capt.png',
+    class: 'Remote',
+    type: 'Solo',
+    languages: ['Ruby on rails', 'PostgreSQL', 'CSS'],
+    live_link: 'https://moneytracker-yyep.onrender.com/',
+    sourceLink: 'https://github.com/leloufadel/Money-tracker-App',
+  },
+];
 
   const projectContainer = document.getElementById('works');
   projectDetails.forEach((project, index) => {
     const articleTemplate = `<div class="card-wrapper">
      <article class="card">
         <div class="img-div">
-        <img src="${project.image}" alt="project1" class="card-project">
+        <img src="${project.featuredImage}" alt="project1" class="card-project">
         </div>
         <div>
-          <h2>${project.name}</h2>
+          <h2>${project.title}</h2>
           <ul class="card-list">
             <li class="no-bullet">${project.class}</li>
             <li class="project-tag">
@@ -104,7 +145,7 @@ window.onresize = checkWindowSize;
         <div class="modal-cover" id="modal-cover${index}">
           <div class="modal" id="modal${index}">
             <div class="modal-head-container">
-              <h2 id="mdlhead-${index}">${project.name}</h2>
+              <h2 id="mdlhead-${index}">${project.title}</h2>
               <span class="modal-close">&times;</span>
             </div>
             <ul class='modal-ul'>
