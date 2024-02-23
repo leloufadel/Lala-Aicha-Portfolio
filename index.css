@@ -37,13 +37,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   /* padding: 0 24px; */
   width: 100%;
   height: 10px;
   overflow: hidden;
   position: fixed;
-  background-color: white;
+  background-color: #333;
   top: 0;
   z-index: 1;
   box-shadow: 0 0 40px #ff6b00;
@@ -62,7 +61,7 @@ a {
 
 .nav-item a {
   font-family: 'Roboto', sans-serif;
-  color: #344563;
+  color: #fff;
   text-decoration: none;
   font-size: 18px;
   margin-left: 15px;
@@ -100,7 +99,7 @@ a {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #344563;
+  background-color: white;
 }
 
 header .navbar ul li.active {
@@ -132,10 +131,6 @@ header .navbar ul li.active a {
 
   header {
     margin-bottom: -5px;
-  }
-
-  .background-holder a {
-    text-decoration: none;
   }
 
   .hamburger {
@@ -579,6 +574,10 @@ header .navbar ul li.active a {
     background-position: right bottom;
   }
 
+  .background-holder a {
+    text-decoration: none;
+  }
+
   .about-me h2 {
     color: rgba(255, 107, 0, 1);
     font-size: 72px;
@@ -637,11 +636,6 @@ header .navbar ul li.active a {
     font-family: 'Inter', sans-serif;
     font-size: 32px;
     text-align: center;
-  }
-
-  .p-work {
-    margin-left: 20px;
-    border: 1px  solid #1c1a19;
   }
 
   .attach-icon {
@@ -746,7 +740,6 @@ header .navbar ul li.active a {
 
   .card {
     width: 100%;
-
     /* background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .5)), url(./logos/Img\ Placeholder\ 3.png) center/cover no-repeat; */
     max-width: 369px;
     display: flex;
@@ -1051,7 +1044,7 @@ header .navbar ul li.active a {
   }
 
   .works-centered .main-works img {
-    width: 448px;
+    width: 648px;
     height: 348px;
     margin: auto;
   }

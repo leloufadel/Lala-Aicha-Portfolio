@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Modal Popup*/
+/* Modal Popup Window */
 #modal-wrapper {
   display: none;
   flex-direction: column;
