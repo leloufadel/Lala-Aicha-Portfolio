@@ -438,7 +438,7 @@ const data = [
     sourceLink: 'https://github.com/sam2if/Space_Travelers',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Financial Metrics',
     description: 'An application that showcases the financial statements of selected companies in the US. The data is in real time, audited, standardized and up to date from the US stock market.',
     languages: ['React', 'Redux', 'JavaScript'],
