@@ -1344,3 +1344,14 @@ header .navbar ul li.active a {
     transform: rotate(360deg);
   }
 }
+
+.item {
+  opacity: 0;
+  transform: translateY(15vh);
+  transition: opacity 1s, transform 1s;
+}
+
+.item.appear {
+  opacity: 1;
+  transform: translateY(0);
+}

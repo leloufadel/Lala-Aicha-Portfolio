@@ -651,7 +651,31 @@ ${data.map((item) => (`<article style=" background: linear-gradient(to bottom, t
 </div>`;
 }
 
-document.addEventListener('DOMContentLoaded', addCardsToUI);
+document.addEventListener('DOMContentLoaded', () => {
+  addCardsToUI();
+
+  const sections = document.querySelectorAll('.item');
+
+  const handleScroll = () => {
+    const bottomScreen = window.innerHeight + window.scrollY;
+    console.log('it is working');
+
+    sections.forEach((section) => {
+      const { top } = section.getBoundingClientRect();
+      const sectionTop = top + window.scrollY;
+
+      if (bottomScreen >= sectionTop + 60) {
+        section.classList.add('appear');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+});
 
 const addToModal = (dataId) => {
   const selectedData = data.filter((x) => x.id === +dataId);
