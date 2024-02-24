@@ -442,8 +442,8 @@ const data = [
     title: 'Financial Metrics',
     description: 'An application that showcases the financial statements of selected companies in the US. The data is in real time, audited, standardized and up to date from the US stock market.',
     languages: ['React', 'Redux', 'JavaScript'],
-    featuredImage: './images/space-traveller.png',
-    liveLink: 'https://space-travelers-p674.onrender.com/',
+    featuredImage: './images/financial.png',
+    liveLink: 'https://financial-metrics-app.onrender.com/',
     sourceLink: 'https://github.com/leloufadel/Financial-Metrics-App',
   },
  
