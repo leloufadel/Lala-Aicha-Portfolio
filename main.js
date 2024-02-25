@@ -446,7 +446,15 @@ const data = [
     liveLink: 'https://financial-metrics-app.onrender.com/',
     sourceLink: 'https://github.com/leloufadel/Financial-Metrics-App',
   },
- 
+  { 
+    id: 5,
+    title: 'Receipe app',
+    description: 'Discover and manage your favorite recipes effortlessly with our user-friendly recipe application. Explore a wide range of recipes for every meal, from breakfast to dinner. Enjoy curated recipes, real-time updates, and easy organization to make cooking a breeze',
+    languages: ['JavaScript', 'Html', 'CSS'],
+    featuredImage: './images/recipe-js.png',
+    liveLink: 'https://leloufadel.github.io/Recipe-Javascript/',
+    sourceLink: 'https://github.com/leloufadel/Recipe-Javascript',
+  }
 ];
 
 const sliceText = (text) => {
